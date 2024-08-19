@@ -89,10 +89,10 @@ def add_cafe():
         img_url = request.form.get('img_url'),
         location = request.form.get('loc'),
         seats = request.form.get('seats'),
-        has_toilet = request.form.get('toilet'),
-        has_wifi = request.form.get('wifi'),
-        has_sockets = request.form.get('sockets'),
-        can_take_calls = request.form.get('calls'),
+        has_toilet = bool(request.form.get('toilet')),
+        has_wifi = bool(request.form.get('wifi')),
+        has_sockets = bool(request.form.get('sockets')),
+        can_take_calls = bool(request.form.get('calls')),
         coffee_price = request.form.get('coffee_price'),
     )
     db.session.add(new_cafe)
